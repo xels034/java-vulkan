@@ -1,0 +1,33 @@
+{
+  "build": "release",
+  "mode": "zip",
+  "selectedAddons": [],
+  "platform": [
+    "windows"
+  ],
+  "descriptions": true,
+  "compact": false,
+  "hardcoded": false,
+  "javadoc": true,
+  "includeJSON": true,
+  "source": true,
+  "osgi": false,
+  "language": "groovy",
+  "contents": [
+    "lwjgl",
+    "lwjgl-glfw",
+    "lwjgl-nfd",
+    "lwjgl-openal",
+    "lwjgl-rpmalloc",
+    "lwjgl-shaderc",
+    "lwjgl-spvc",
+    "lwjgl-sse",
+    "lwjgl-stb",
+    "lwjgl-tinyexr",
+    "lwjgl-tinyfd",
+    "lwjgl-vma",
+    "lwjgl-vulkan"
+  ],
+  "version": "3.3.1",
+  "versionLatest": "3.3.1"
+}

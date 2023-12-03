@@ -1,0 +1,448 @@
+# See this link for documentation of all options: https://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.jdt.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fjdt%2Fcore%2FJavaCore.html
+# Use "javac -X" to get a list of supported SuppressWarnings constants that are recognized by the current compiler
+# See this link for documentation about all SuppressWarnings constants that are recognized by the eclipse language server https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-suppress_warnings.htm
+
+#Enable local variable names in debugger
+org.eclipse.jdt.core.compiler.debug.localVariable = generate
+
+#Enable source code highlighting in debugger
+org.eclipse.jdt.core.compiler.debug.lineNumber = generate
+
+#Enable navigating to code source in debugger
+org.eclipse.jdt.core.compiler.debug.sourceFile = generate
+
+#Enable optimizing out loval unused variables in debugging
+org.eclipse.jdt.core.compiler.codegen.unusedLocal = preserve
+
+#Generate method parameter meta data (such as parameter names) for reflection
+org.eclipse.jdt.core.compiler.codegen.methodParameters = generate
+
+#Specify the compatibility level of the class files. Max is only 1.8 though
+#org.eclipse.jdt.core.compiler.codegen.targetPlatform = 1.8
+
+#Replace JSR instructions by inlining, generating bigger bytecode, but loading faster due to skipped validations. Mandatory for versions >= 1.5
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode = enabled
+
+#Enables JavaDoc functionality. When disabled JavaDocs are just plaintest blocks
+org.eclipse.jdt.core.compiler.doc.comment.support = enabled
+
+#Overriding a method that is package-visible (not public, protected or private) cannot be seen and therefore overridden from another package, but would create a new method. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.overridingPackageDefaultMethod = warning
+
+#Method with constructer names are bad practice. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.methodWithConstructorName = warning
+
+#Use of deprecated API can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.deprecation = warning
+
+#Should depracate APIs called in deprecated code be reported?
+org.eclipse.jdt.core.compiler.problem.deprecationInDeprecatedCode = disabled
+
+#Should the compiler point out the override of a deprecated method?
+org.eclipse.jdt.core.compiler.problem.deprecationWhenOverridingDeprecatedMethod = disabled
+
+#multiple catch blocks may hdie each other (IOExceptione.g.  after Exception) The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.hiddenCatchBlock = warning
+
+#Unused local variables can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.unusedLocal = warning
+
+#Unused parameters can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.unusedParameter = info
+
+#Unused exception parameters can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.unusedExceptionParameter = info
+
+#Should unused parameters be pointed out even when implementing abstract methods?
+org.eclipse.jdt.core.compiler.problem.unusedParameterWhenImplementingAbstract = disabled
+
+#Should unused parameters be pointed out even when implementing from a concrete method?
+org.eclipse.jdt.core.compiler.problem.unusedParameterWhenOverridingConcrete = disabled
+
+#Should the reference (mentioning) in JavaDoc suffice to flag an unused parameter as "used"?
+org.eclipse.jdt.core.compiler.problem.unusedParameterIncludeDocCommentReference = disabled
+
+#Unused imports can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.unusedImport = warning
+
+#Unused type parameters would make a method technically non-generic. Should the compiler point this out?
+org.eclipse.jdt.core.compiler.problem.unusedTypeArgumentsForMethodInvocation = warning
+
+#Access to members of onclosing types might have to be emulated due to being technically inaccessible. The compiler can point this out, as such access might have performance implciations
+org.eclipse.jdt.core.compiler.problem.syntheticAccessEmulation = info
+
+#General unused type parameters lead to technically non-generic code. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.unusedTypeParameter = warning
+
+#Ignore missing //$NON-NLS-<n>$ i.e. non externalized strings
+org.eclipse.jdt.core.compiler.problem.nonExternalizedStringLiteral = ignore
+
+#The usage of the "assert" keyword as an identifier is legal until version 1.4. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.assertIdentifier = error
+
+#The usage of the "enum" keyword as an identifier is legal until version 1.5. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.enumIdentifier = error
+
+#Access to static fields or method should happen via the class's identifier, not from a concrete instance (i.e. Map.newMap() instead of aMyMapInstance.newMap())
+org.eclipse.jdt.core.compiler.problem.indirectStaticAccess = error
+
+# ??? Seems like the same thing as indirectStaticAccess
+org.eclipse.jdt.core.compiler.problem.staticAccessReceiver = error
+
+#Assignsments without effects such as "x = x" can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.noEffectAssignment = warning
+
+# ???
+org.eclipse.jdt.core.compiler.problem.incompatibleNonInheritedInterfaceMethod = warning
+
+#Unused private methods or fields declared can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.unusedPrivateMember = warning
+
+#Local variables may hide member fields. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.localVariableHiding = warning
+
+#Point out hiding local variables even in constructors and setters?
+org.eclipse.jdt.core.compiler.problem.specialParameterHidingField = disabled
+
+#A field may hide a local variable. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.fieldHiding = warning
+
+#Type parameters may hide ach other. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.typeParameterHiding = warning
+
+#A boolean assignment acting as a condition might be accidental "if(myCond = true)". The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.possibleAccidentalBooleanAssignment = info
+
+#Switch cases without break might be accidental in most cases. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.fallthroughCase = info
+
+#Empty statement blocks or unnecessary semicolons can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.emptyStatement = info
+
+#Unecessary casting or instanceof checks can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.unnecessaryTypeCheck = warning
+
+#When the "then" block of an if statement is completeing unnormally (e.g. via return statement) the else block might be uncessaray (?) The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.unnecessaryElse = ignore
+
+#Undocumented empty blocks are probably an oversight. THe compiler can point this out
+org.eclipse.jdt.core.compiler.problem.undocumentedEmptyBlock = info
+
+#A finally block may not complete normally (e.g. via return or throw statements) The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.finallyBlockNotCompletingNormally = ignore
+
+#An unused throw declaration might restrict the caller unnecessarily. The compiler can point this out.
+org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownException = warning
+
+#Report unused throw declarations even in overridden methods?
+org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownExceptionWhenOverriding = disabled
+
+#Should the reference (i.e. mentioning) a throw declaration flag it as "used"?
+org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownExceptionIncludeDocCommentReference = disabled
+
+#Should the exceptions "Exception" and "Throwable" be exempt in unused throw statements warning? Disabled means those 2 unused throws also trigger the error/warning/info if configured
+org.eclipse.jdt.core.compiler.problem.unusedDeclaredThrownExceptionExemptExceptionAndThrowable = disabled
+
+#Readiability might be improved when prefixing all members with "this" (e.g. this.description = "This is my description") The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.unqualifiedFieldAccess = ignore
+
+#Some operations invlolving generic types might potentially invalidated type safety. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.uncheckedTypeOperation = info
+
+#References to type (e.g. "Map" instead of "Map<String, Object") are strongly discouraged and might be disallowed in future versions. The compiler can point this out.
+org.eclipse.jdt.core.compiler.problem.rawTypeReference = warning
+
+#Code may unavoidably use raw types (such as overriding from a raw type using method) Should teh compiler still point this out?
+org.eclipse.jdt.core.compiler.problem.unavoidableGenericTypeProblems = enabled
+
+#Generic type parameters with a bound that happens to be a final type cannot be futher extended, so the bound is useless. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.finalParameterBound = warning
+
+#Classes inheriting from the Serializable interface should set a serialVersionUID to match class versions on the serializing and desrializing end, but serialization works in principle without this field. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.missingSerialVersion = info
+
+#Varargs might need casting to be more specific (e.g. method(String message, Object... args) called with method("Hey", null) - Is null meant as the whole array or first array element?). The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.varargsArgumentNeedCast = warning
+
+#Autoboxing can be pointed out by the compiler
+org.eclipse.jdt.core.compiler.problem.autoboxing = ignore
+
+#Annotations can be used as a super-interface. While technically legal this is discouraged. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.annotationSuperInterface = error
+
+#Overridden methods are supposed to have the corresponding annotation. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.missingOverrideAnnotation = error
+
+#Are override annotations also required when overriding from interfaces?
+org.eclipse.jdt.core.compiler.problem.missingOverrideAnnotationForInterfaceMethodImplementation = enabled
+
+#A methods actual deprecated annotation and the corresponding JavaDoc entry might not match. The compiler can point this out.
+org.eclipse.jdt.core.compiler.problem.missingDeprecatedAnnotation = info
+
+#Object.equals(Object) must implement the hashCode() method as well in most cases. The compiler can point this out.
+org.eclipse.jdt.core.compiler.problem.missingHashCodeMethod = warning
+
+#Some code might be statically unreachable ("if(false){...}") The compiler can point this out.
+org.eclipse.jdt.core.compiler.problem.deadCode = warning
+
+#Point out dead code in "trivial" if statements (if(staticBoolThatIsFalse){...})? This properly omits almost all debug ifs
+org.eclipse.jdt.core.compiler.problem.deadCodeInTrivialIfStatement = disabled
+
+#A switch on an enum has a known set of options. The compiler can point out if not all options are covered
+org.eclipse.jdt.core.compiler.problem.incompleteEnumSwitch = info
+
+#A default case will catch all options even if not covered explicitley. Should the compiler ignore the default case when pointing out switch case coverage?
+org.eclipse.jdt.core.compiler.problem.missingEnumCaseDespiteDefault = disabled
+
+#Switch cases on unbounded types such as numbers or strings can theoretically be missed without a default case. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.missingDefaultCase = ignore
+
+#Unused labels can be pointed out be the compiler. But nobody uses labels.
+org.eclipse.jdt.core.compiler.problem.unusedLabel = warning
+
+#JavaDoc definitions might be invalid, the compiler can point this out
+org.eclipse.jdt.core.compiler.problem.invalidJavadoc = warning
+
+#Should invalid usage of JavaDoc tags also be pointed out?
+org.eclipse.jdt.core.compiler.problem.invalidJavadocTags = enabled
+
+#Should referemces to deprecated content in JavaDoc be pointed out?
+org.eclipse.jdt.core.compiler.problem.invalidJavadocTagsDeprecatedRef = disabled
+
+#Should invisible refernces in JavaDock be pointed out? (???)
+org.eclipse.jdt.core.compiler.problem.invalidJavadocTagsNotVisibleRef = disabled
+
+#The minimum visibility of JavaDoc problems (???)
+org.eclipse.jdt.core.compiler.problem.invalidJavadocTagsVisibility = public
+
+#The compiler checks for missing descriptions on a set of known JavaDoc tags
+org.eclipse.jdt.core.compiler.problem.missingJavadocTagDescription = all_standard_tags
+
+# ??? (default is ignore)
+org.eclipse.jdt.core.compiler.problem.missingJavadocTags = warning
+
+# ???
+org.eclipse.jdt.core.compiler.problem.missingJavadocTagsVisibility = public
+
+#Point out missing override JavaDoc tag?
+org.eclipse.jdt.core.compiler.problem.missingJavadocTagsOverriding = enabled
+
+#Point out missing type parameter definitions in JavaDoc?
+org.eclipse.jdt.core.compiler.problem.missingJavadocTagsMethodTypeParameters = disabled
+
+#Point out any field or method that is missing a JavaDoc?
+org.eclipse.jdt.core.compiler.problem.missingJavadocComments = ignore
+
+#Visibility for when any missing JavaDoc is pointed out (controlled by missingJavadocComments)
+org.eclipse.jdt.core.compiler.problem.missingJavadocCommentsVisibility = public
+
+#Include overriding methods when pointing out nay missing JavaDoc?
+org.eclipse.jdt.core.compiler.problem.missingJavadocCommentsOverriding = disabled
+
+#String concatenation works with Strings and char[]s e.g. "Hello " + new char[]{' ', 'm', 'e'}. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.noImplicitStringConversion = ignore
+
+#Maximum number of reprorted problems before stopping per compilation unit
+org.eclipse.jdt.core.compiler.maxProblemPerUnit = 256
+
+#Should "optional" errors (Issues which severity has been configured as "error" in this file) be treaded as fatal (i.e. real) errors, or should compilation still work and ignore errors (disabled)?
+org.eclipse.jdt.core.compiler.problem.fatalOptionalError = enabled
+
+#Assigning parameters might be confusing in locally scoped code. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.parameterAssignment = ignore
+
+#Methods that are proven not to rely on any member data could be declared static. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.reportMethodCanBeStatic = ignore
+
+# ??? Semantically the same as the above
+org.eclipse.jdt.core.compiler.problem.reportMethodCanBePotentiallyStatic = ignore
+
+#In some cases in can be statically proven that an Autoclosable was never closed. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.unclosedCloseable = error
+
+#> With lwjgl's stack allocator the resource leak detection is potato
+#In some cases it cannot be statically proved whether an AUtoclosable's close() method was definetley called or not. The compiler can point this still out
+org.eclipse.jdt.core.compiler.problem.potentiallyUnclosedCloseable = ignore
+
+#Explicily closing an Autoclosable is unusual. The compiler can point this out.
+org.eclipse.jdt.core.compiler.problem.explicitlyClosedAutoCloseable = ignore
+
+#The compiler can use configured nullable and nonnull annotations to aid nullpointer analysis. Should this be enabled?
+org.eclipse.jdt.core.compiler.annotation.nullanalysis = disabled
+
+#Configured nullable annotation for aiding nullpointer analysis
+#org.eclipse.jdt.core.compiler.annotation.nullable =
+
+#Additional nullable annotation types that may be defined by libraries etc. A comma separated list of fully qualified names
+#org.eclipse.jdt.core.compiler.annotation.nullable.secondary =
+
+#Configured nonnull annotation for aiding nullpointer analysis
+#org.eclipse.jdt.core.compiler.annotation.nonnull =
+
+#Additional nonnull annotation types that may be defined by libraries etc. A comma separated list of fully qualified names
+#org.eclipse.jdt.core.compiler.annotation.nonnull.secondary =
+
+#Configued annotation for aiding nullpointer analysis
+#org.eclipse.jdt.core.compiler.annotation.nonnullbydefault =
+
+#Additional annotation types that may be defined by libarries etc. A comma separated list of fully qqualified names
+#org.eclipse.jdt.core.compiler.annotation.nonnullbydefault.secondary =
+
+#Should a missing NonNullByDefault annotation be pointed out by the compiler?
+org.eclipse.jdt.core.compiler.annotation.missingNonNullByDefaultAnnotation = ignore
+
+#Whether certain special cases in aided nullpointer analysis should be treated as an error or warning
+org.eclipse.jdt.core.compiler.problem.nullSpecViolation = error
+org.eclipse.jdt.core.compiler.problem.nullAnnotationInferenceConflict = error
+org.eclipse.jdt.core.compiler.problem.nullUncheckedConversion = error
+org.eclipse.jdt.core.compiler.problem.pessimisticNullAnalysisForFreeTypeVariables = warning
+org.eclipse.jdt.core.compiler.problem.redundantNullAnnotation = warning
+org.eclipse.jdt.core.compiler.annotation.inheritNullAnnotations = disabled
+org.eclipse.jdt.core.compiler.problem.nonnullParameterAnnotationDropped = warning
+org.eclipse.jdt.core.compiler.problem.nonnullTypeVariableFromLegacyInvocation = warning
+
+#The compiler might guess that a member field is non null, because it was so in an earlier method call. Though it cannot be guaranteed
+org.eclipse.jdt.core.compiler.problem.syntacticNullAnalysisForFields = disabled
+
+#Which platform version the source code is supposed to be in. The max is 1.8 though
+#org.eclipse.jdt.core.compiler.source = 1.8
+
+#Which platform version should be adhered to for compliance. The max is 1.8 though
+#org.eclipse.jdt.core.compiler.compliance = 1.8
+
+#A list of tags in comments that are picked up and marked by the compiler
+org.eclipse.jdt.core.compiler.taskTags = TODO,FIXME,CONTINUE
+
+#The priorities of the picked up tags in comments
+org.eclipse.jdt.core.compiler.taskPriorities = NORMAL,HIGH,HIGH
+
+#Whether the comment tags are case sensitive
+org.eclipse.jdt.core.compiler.taskCaseSensitive = enabled
+
+#Access via reflection might be proven to be illegal. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.forbiddenReference = error
+
+#Acces svia reflection might be discouraged. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.discouragedReference = warning
+
+#Enables the usage of the SuppressWarnings annotation
+org.eclipse.jdt.core.compiler.problem.suppressWarnings = enabled
+
+#Should null related errors/warnings be included in assert statements?
+org.eclipse.jdt.core.compiler.problem.includeNullInfoFromAsserts = disabled
+
+#Should SuppressWarnings also include all warings that were configured as errors in this file?
+org.eclipse.jdt.core.compiler.problem.suppressOptionalErrors = enabled
+
+#Should a warning be thrown when an annotation cannot be parsed correctly? (Such as a warning when SupressWarning cannot be interpreted correctly)
+org.eclipse.jdt.core.compiler.problem.unhandledWarningToken = info
+
+#A SupressWarnings annotation might be unnecessary. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.unusedWarningToken = warning
+
+#Method or field access might be statically proven to be performed on null references. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.nullReference = error
+
+#variable that was checked to be nonnull might have become potentially null in subsequent assignments. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.potentialNullReference = ignore
+
+#It might be proved that a null check is unecessary (such as access to a variables members previously). The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.redundantNullCheck = warning
+
+#Should overriding methods always, globally, have to call the super invokation= The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.overridingMethodWithoutSuperInvocation = ignore
+
+#Whether defining an interface that is already implemented by a super class should be displayed
+org.eclipse.jdt.core.compiler.problem.redundantSuperinterface = ignore
+
+#Checks proven to compare the same object for identity (e.g. x == x) are unecessary. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.comparingIdentical = warning
+
+#An inheriting method that is missing a synchronized declaration from its super type might be an oversight. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.missingSynchronizedOnInheritedMethod = info
+
+#An unused allocated objects hints to that object being useless (Though side effects in the constructor don't guarantee this) The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.unusedObjectAllocation = warning
+
+#Since version 1.7 some type declaration for generics are redundant. The compiler can point this out
+org.eclipse.jdt.core.compiler.problem.redundantSpecificationOfTypeArguments = error
+
+#Force the classpath entry order to be the build order
+org.eclipse.jdt.core.computeJavaBuildOrder = ignore
+
+#During building, some resources might be copied to the same target. Should this be treated as a warning or error?
+org.eclipse.jdt.core.builder.duplicateResourceTask = warning
+
+#Some filter used during resource copying, being a file name pattern (* and ? wildcards allowed) Though it is unclear whether this is a blacklist or whitelist
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter =
+
+#Whether the output directory should be cleaned before performing full builds
+org.eclipse.jdt.core.builder.cleanOutputFolder = clean
+
+#Whether a full build should be triggered if the JavaBuilder detects that a class file was modified by another process
+org.eclipse.jdt.core.builder.recreateModifiedClassFileInOutputFolder = ignore
+
+#Whether an incomplete classpath should be treated as a warning or error
+org.eclipse.jdt.core.incompleteClasspath = error
+
+#Whether a circular classpath should be treated as a warning or error
+org.eclipse.jdt.core.circularClasspath = error
+
+#Whether incompatible JDK levels between references projects hould be threaded as errors, warnings, or be ignored
+org.eclipse.jdt.core.incompatibleJDKLevel = warning
+
+#Can teh buidld process be aborted when the classpath is invalid?
+org.eclipse.jdt.core.builder.invalidClasspath = abort
+
+#Enables the usage of expliction patterns in classpath entries
+org.eclipse.jdt.core.classpath.exclusionPatterns = enabled
+
+#Enables to usage of multiple output locations for builds
+org.eclipse.jdt.core.classpath.multipleOutputLocations = enabled
+
+#Whether an output location overlapping with a source location should be treated as error, warning or be ignored
+org.eclipse.jdt.core.classpath.outputOverlappingAnotherSource = warning
+
+#Whether to enabel preview features in the compiler
+org.eclipse.jdt.core.compiler.problem.enablePreviewFeatures = disabled
+
+#Log level of the notification that preview features might get removed in later releases
+org.eclipse.jdt.core.compiler.problem.reportPreviewFeatures = info
+
+#Milliseconds to wait when retriecing a method's parameter names form javadoc. 0 disables the javadoc retrieval entirely
+org.eclipse.jdt.core.timeoutForParameterNameFromAttachedJavadoc = 250
+
+#The formatter used for auto formatting
+org.eclipse.jdt.core.javaFormatter = org.eclipse.jdt.core.defaultJavaFormatter
+
+#Enables the hiding of info not visible (such as private methods of a super class)
+org.eclipse.jdt.core.codeComplete.visibilityCheck = enabled
+
+#When enabled code copletion ignores deprecated content
+org.eclipse.jdt.core.codeComplete.deprecationCheck = disabled
+
+#Code completion respects camel case names
+org.eclipse.jdt.core.codeComplete.camelCaseMatch = enabled
+
+#Code completion respects substring matches
+org.eclipse.jdt.core.codeComplete.substringMatch = enabled
+
+# ???
+org.eclipse.jdt.core.codeComplete.forceImplicitQualification = disabled
+
+#Autofill the configured prefixes when showing code completion suggestions
+org.eclipse.jdt.core.codeComplete.fieldPrefixes =
+org.eclipse.jdt.core.codeComplete.staticFieldPrefixes =
+org.eclipse.jdt.core.codeComplete.staticFinalFieldPrefixes =
+org.eclipse.jdt.core.codeComplete.localPrefixes =
+org.eclipse.jdt.core.codeComplete.argumentPrefixes =
+org.eclipse.jdt.core.codeComplete.fieldSuffixes =
+org.eclipse.jdt.core.codeComplete.staticFieldSuffixes =
+org.eclipse.jdt.core.codeComplete.staticFinalFieldSuffixes =
+org.eclipse.jdt.core.codeComplete.localSuffixes =
+org.eclipse.jdt.core.codeComplete.argumentSuffixes =
+
+#Code completion ignores matches that are forbidden by certain rule sets (???)
+org.eclipse.jdt.core.codeComplete.forbiddenReferenceCheck = enabled
+org.eclipse.jdt.core.codeComplete.discouragedReferenceCheck = disbaled
+org.eclipse.jdt.core.codeComplete.suggestStaticImports = enabled
